@@ -1,0 +1,12 @@
+Fresher	sự khác nhau giữa list, tuple
+Fresher	List comprehension là gì
+Fresher	virtualenv là gì
+Fresher	Sử dụng thư viện nào để viết unit test
+Fresher	Cách debug với python
+Fresher	__init__, __str__ có chức năng gì
+Fresher	Dùng *args, **kwargs như thế nào
+Fresher	Biến toàn cục và cục bộ khác nhau ra sao
+Fresher	Lambda function là gì?
+Fresher	GIL là gì? Có ảnh hưởng gì khi dùng đa luồng?
+Fresher	Decorator là gì? Cách viết một decorator?
+
