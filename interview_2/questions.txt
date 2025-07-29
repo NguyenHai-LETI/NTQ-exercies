@@ -1,0 +1,16 @@
+1. Python căn bản
+2. Tạo virtual environment
+3. Cài đặt django 
+4. Cấu trúc project Django
+5. Xây dựng ứng dụng Django cơ bản (cấu hình url, xây dựng view, tạo template html,...)
+6. Tìm hiểu về ORM (ORM là gì, các kiểu dữ liệu ORM, Chạy makemigrations và migrate, các câu lệnh thao tác với ORM...)
+7. Tìm hiểu về Class-based View và function base view
+8. Authentication và Authorization
+9 Cài đặt Django rest framework
+10. Serializers, API view, ViewSet, Router
+11. Tìm hiểu về Authentication (Token, Session, JWT)
+12. Permissions & Throttling
+13. Quản lý Static và Media files
+14. Unittest
+15. Triển khai ứng dụng trên các môi trường (nginx, gunicorn,...)
+16. Tạo socket server với Python socketIO
