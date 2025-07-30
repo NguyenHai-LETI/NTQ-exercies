@@ -1,52 +1,24 @@
-# Django Project
+# Django Demo Project
 
-Đây là một dự án Django với Django REST Framework và JWT authentication.
+## Demo Screenshots
 
-## Cài đặt
+### 1. Home page
+![Home page](Screenshot/Homepage.png)
 
-1. Tạo virtual environment:
-```bash
-python -m venv venv
-```
+### 2. Django Admin
+![Django Admin](Screenshot/admin.png)
 
-2. Kích hoạt virtual environment:
-- Windows:
-```bash
-venv\Scripts\activate
-```
-- Linux/Mac:
-```bash
-source venv/bin/activate
-```
+### 3. Register
+![Register](Screenshot/register.png)
 
-3. Cài đặt dependencies:
-```bash
-pip install -r requirements.txt
-```
+### 4. Login
+![Login](Screenshot/login.png)
 
-4. Chạy migrations:
-```bash
-python manage.py migrate
-```
+### 5. POST item - authenticated
+![POST item](Screenshot/postItem.png)
 
-5. Tạo superuser (tùy chọn):
-```bash
-python manage.py createsuperuser
-```
+### 6. GET all items - authenticated
+![GET all items](Screenshot/getAll.png)
 
-6. Chạy server:
-```bash
-python manage.py runserver
-```
-
-## Cấu trúc dự án
-
-- `myproject/`: Thư mục chính của dự án Django
-- `myapp/`: Ứng dụng Django
-- `requirements.txt`: Danh sách các dependencies
-- `.gitignore`: File loại trừ các file không cần thiết khỏi Git
-
-## Lưu ý
-
-- Thư mục `venv/` đã được loại trừ khỏi Git repository
-- Để cài đặt lại môi trường, chỉ cần chạy `pip install -r requirements.txt` 
+### 7. GET by id - authenticated
+![GET by id](Screenshot/getByID.png)
