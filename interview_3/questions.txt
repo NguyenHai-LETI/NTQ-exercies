@@ -1,0 +1,16 @@
+Bổ sung lý thuyết và viết demo cho: 
+1. Middleware? custom middleware, có bao nhiêu loại? tác dụng?)
+2. Lifecycle request django, nó đi qua những gì?
+3. Các loại orm sử dụng trong django? Ưu nhược điểm
+4. decorator sử dụng trong authorization
+5. demo sử dụng session, jwt? so sánh
+6. Đọc kĩ thư viện unittesing
+7. socketIO dựng sever, tạo app chạy 2 client chat với nhau
+8. solid
+9. design pattern (có 3 cái category, code demo mỗi nhóm 3 ví dụ)
+10. mongoDB
+
+
+
+
+
