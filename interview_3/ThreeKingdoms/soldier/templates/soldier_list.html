@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách </title>
+</head>
+<body>
+    <h1>Sử dụng {{ method }}</h1>
+    <h2>Danh sách nhân vật Tam Quốc:</h2>
+    <ul>
+        {% for soldier in soldiers %}
+            <li>{{ soldier.name }} - Longevity: {{ soldier.longevity }} - skills: {{ soldier.skills}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

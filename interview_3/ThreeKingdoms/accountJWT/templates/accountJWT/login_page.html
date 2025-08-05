@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập bằng JWT</title>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Tên người dùng:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Đăng nhập</button>
+            <div id="message"></div>
+        </form>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ccc;">
+
+        <h3>Kiểm tra API bảo vệ</h3>
+        <button id="protectedBtn">Truy cập API</button>
+        <div id="protectedMessage"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const messageDiv = document.getElementById('message');
+            const protectedBtn = document.getElementById('protectedBtn');
+            const protectedMessageDiv = document.getElementById('protectedMessage');
+
+            // Xử lý đăng nhập
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                messageDiv.textContent = '';
+                messageDiv.className = '';
+
+                const username = e.target.username.value;
+                const password = e.target.password.value;
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/api/jwt/login/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        localStorage.setItem('access_token', data.access);
+                        localStorage.setItem('refresh_token', data.refresh);
+                        messageDiv.textContent = 'Đăng nhập thành công!';
+                        messageDiv.classList.add('success');
+                        console.log('Access Token:', data.access);
+                    } else {
+                        messageDiv.textContent = data.error || 'Đăng nhập thất bại.';
+                        messageDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    messageDiv.textContent = 'Đã xảy ra lỗi kết nối.';
+                    messageDiv.classList.add('error');
+                    console.error('Lỗi khi đăng nhập:', error);
+                }
+            });
+
+            // Xử lý nút truy cập API bảo vệ
+            protectedBtn.addEventListener('click', async () => {
+                protectedMessageDiv.textContent = '';
+
+                const accessToken = localStorage.getItem('access_token');
+                if (!accessToken) {
+                    protectedMessageDiv.textContent = 'Vui lòng đăng nhập trước!';
+                    protectedMessageDiv.classList.add('error');
+                    return;
+                }
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/api/jwt/protected/', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`
+                        }
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        protectedMessageDiv.textContent = data.message;
+                        protectedMessageDiv.classList.add('success');
+                    } else {
+                        protectedMessageDiv.textContent = data.detail || 'Truy cập bị từ chối.';
+                        protectedMessageDiv.classList.add('error');
+                    }
+                } catch (error) {
+                    protectedMessageDiv.textContent = 'Đã xảy ra lỗi khi truy cập API.';
+                    protectedMessageDiv.classList.add('error');
+                    console.error('Lỗi khi truy cập tài nguyên bảo vệ:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

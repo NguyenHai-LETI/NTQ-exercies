@@ -1,0 +1,9 @@
+<h1>Trang chủ</h1>
+{% if user.is_authenticated %}
+    <p>Chào mừng, {{ user.username }}!</p>
+    <a href="{% url 'logout' %}">Đăng xuất</a>
+{% else %}
+    <p>Bạn chưa đăng nhập.</p>
+    <a href="{% url 'login_page' %}">Đăng nhập</a>
+    <a href="{% url 'register_page' %}">Đăng ký</a>
+{% endif %}
