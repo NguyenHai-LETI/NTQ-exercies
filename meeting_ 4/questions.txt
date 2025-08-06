@@ -1,0 +1,40 @@
+tích hợp cùng backend - giao tiếp với backend. 
+messageQ
+resAPI
+pyENV quản lí virtual env
+tách biệt proj và env
+file env cho các môi trường
+staging - môi trường kiểm thử
+production
+dev
+tesing - tester
+
+1 file common , nhiều file setting env cho từng môi trường khác nhau.
+swagger  
+intergration test: tạo db -> gọi api -> chạy qua mọi luồng
+mock test - unittest  
+
+built in view của restframework
+viewset
+apiview - 4 method
+generateapiview
+
+token lưu trong ssstorage localstorage
+tìm hiểu cụ thể cách tạo token, kiểm tra validate
+cấu tạo của token
+cơ chế refresh token
+chức năng của nginx, cấu hình nginx cơ bản, gunicorn
+cơ chế khi request gửi tới nginx, guinicorn. nó tạo thread hoặc process, blogDB static global variable conflic
+thread process ảnh hưởng tới db như nào? có bị block db không
+cách để tránh n+1 problem
+ 
+pythonsoketIO server (có cả client)
+
+chat app
+
+tạo service.py, view gọi tới.
+ 
+
+
+
+                                                                                 
