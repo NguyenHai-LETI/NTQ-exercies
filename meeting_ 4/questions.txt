@@ -1,40 +1,17 @@
-tích hợp cùng backend - giao tiếp với backend. 
-messageQ
-resAPI
-pyENV quản lí virtual env
-tách biệt proj và env
-file env cho các môi trường
-staging - môi trường kiểm thử
-production
-dev
-tesing - tester
-
-1 file common , nhiều file setting env cho từng môi trường khác nhau.
-swagger  
-intergration test: tạo db -> gọi api -> chạy qua mọi luồng
-mock test - unittest  
-
-built in view của restframework
-viewset
-apiview - 4 method
-generateapiview
-
-token lưu trong ssstorage localstorage
-tìm hiểu cụ thể cách tạo token, kiểm tra validate
-cấu tạo của token
-cơ chế refresh token
-chức năng của nginx, cấu hình nginx cơ bản, gunicorn
-cơ chế khi request gửi tới nginx, guinicorn. nó tạo thread hoặc process, blogDB static global variable conflic
-thread process ảnh hưởng tới db như nào? có bị block db không
-cách để tránh n+1 problem
- 
-pythonsoketIO server (có cả client)
-
-chat app
-
-tạo service.py, view gọi tới.
- 
-
-
-
-                                                                                 
+1.tích hợp socketIO cùng backend - có thể giao tiếp với backend, lấy dữ liệu từ BD (cách sử dụng messageQ để kết nối giữa server backend và socketIO)
+2. tìm hiểu pythonsoketIO server (có cả client)
+3. resAPI được xử dụng để tích hợp websocket cùng với nhau mà không cần dùng thư viện trung gian như messageQ?
+4. pyENV quản lí virtual env như nào? Cách tách biệt project và file env.
+5. cần nhiều file env cho các môi trường(môi trường dev staging, testing, production) được lưu vào folder envs của dự án trong đó chứa commonENV và các envs khác cho từng môi trường
+6. Tìm hiểu cách dùng swagger với restframework
+7. Tìm hiểu intergration test(tạo db tới duyệt qua api, trả về respond...) và mock test - unittest (test các func, unnit nhỏ)  
+8. built-in view của restframework (viewset; apiview; generateapiview - mỗi tầng sẽ có một mức độ detail khác nhau)
+9. token lưu trong sessionstorage và localstorage khác nhau thế nào? khi nào thì lưu ở đâu
+10. tìm hiểu cụ thể cấu tạo token, cách server kiểm tra validate
+11.cơ chế hoạt động của refresh token
+12. chức năng của nginx, gunicorn, cấu hình nginx cơ bản
+13. cơ chế khi request gửi tới nginx, guinicorn, nó tạo thread hoặc process như nào? blogDB 
+thread process ảnh hưởng tới db như nào? có bị block db và static global variable conflict không?
+14. cách để tránh n+1 problem trong DB
+15.trong các ứng dụng phức tạp thì phần logic chính được tách dời viết trong service.py, sau đó view gọi tới service
+16.tạo chat app                                                                               
