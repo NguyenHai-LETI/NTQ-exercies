@@ -1,0 +1,29 @@
+run reactjs server thông qua vite: 
+npm run dev
+build reactjs project
+npm run build
+
+run nginx: start nginx
+stop nginx:     nginx -s quit
+reload nginx configuration:     nginx -s reload
+
+run daphne: 
+daphne -b 127.0.0.1 -p 8000 social_app.asgi:application
+
+
+run gunicorn: 
+gunicorn social_app.wsgi:application --bind 127.0.0.1:8000
+run waitress: 
+waitress-serve --listen=127.0.0.1:8000 social_app.wsgi:application
+
+
+Để truy cập:
+Nginx (Frontend React): http://127.0.0.1/ hoặc http://localhost/
+Django Backend (qua Nginx proxy): http://127.0.0.1/api/ hoặc http://127.0.0.1/users/
+WebSocket (qua Nginx proxy): ws://127.0.0.1/ws/
+Tóm tắt các cổng:
+80: Nginx (Frontend + Proxy)
+8000: Daphne (Django Backend + WebSocket)
+
+
+

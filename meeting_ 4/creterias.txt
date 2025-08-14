@@ -1,0 +1,42 @@
+- tạo các nhánh features, sau đó tạo merge
+- chạy docker
+
+Design:
+  - HTTP & REST, RESTful API
+  - Versioning API, JSON schema
+  - Error handling & response format
+  - JWT, session, Basic Auth, OAuth2, Rate limiting & throttling
+  - Pagination & filtering
+  - OpenAPI/Swagger, Postman collection.
+
+IDE & tool:
+  - Github, GitLab, Code Commit
+  - Build Tool 
+  - Debug tool
+ - build debug cho test
+Test:
+  - Unit test, integration test
+Programming:
+  - Language
+  - Structure & Algorithm
+  - OOP, SOLID
+  - Design Pattern
+Database:
+  - index
+  - database design: các nguyên lý thiết kế database
+  - RDBMS, NoSQL
+  - Database connection Pool *
+  - Trigger, Procedures, function
+middleware:
+  - Caching: Redis, Memcached...
+  - Queue: Kafka, RabbitMQ...
+  - Search engine: Solr, Elastic*..
+optimize: 
+  - Optimize code
+  - Query DB optimize
+
+- tìm kiếm box chat
+- đầy đủ CRUD - search, read, filter
+
+- OpenAPI Swagger
+- Docker
