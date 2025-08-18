@@ -1,0 +1,8 @@
+custom exception handler django rest framework
+config logging django
+production, staging, testing, develop, common env
+đặt tên folder theo chuẩn PEP8
+đặt tên theo chuẩn restFul
+raise exception tự tạo
+
+cách sử dụng debug tool-bar
